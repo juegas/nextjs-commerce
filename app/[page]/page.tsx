@@ -5,13 +5,7 @@ import { RenderBuilderContent } from '../../components/builder';
 //TODO: move to env var
 builder.init('ff3a5ee389364ccd9de2e2e5dd9c111d');
 
-interface PageProps {
-  params: {
-    page: string[];
-  };
-}
-
-export default async function Page(props: PageProps) {
+export default async function Page() {
   const content = await builder
     // Get the page content from Builder with the specified options
     .get('page', {
