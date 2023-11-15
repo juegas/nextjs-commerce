@@ -1,5 +1,5 @@
-import { builder } from "@builder.io/sdk";
-import { RenderBuilderContent } from "../../components/builder";
+import { builder } from '@builder.io/sdk';
+import { RenderBuilderContent } from '../../components/builder';
 
 // Replace with your Public API Key
 //TODO: move to env var
@@ -14,13 +14,13 @@ interface PageProps {
 export default async function Page(props: PageProps) {
   const content = await builder
     // Get the page content from Builder with the specified options
-    .get("page", {
+    .get('page', {
       userAttributes: {
         // Use the page path specified in the URL to fetch the content
-        urlPath: "/" + (props?.params?.page?.join("/") || ""),
+        urlPath: '/' + (props?.params?.page?.join('/') || '')
       },
       // Set prerender to false to return JSON instead of HTML
-      prerender: false,
+      prerender: false
     })
     // Convert the result to a promise
     .toPromise();
