@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@builder.io/react':
     specifier: ^3.1.1
-    version: 3.1.1(react-dom@18.2.0)(react@18.2.0)
+    version: 3.1.1(encoding@0.1.13)(react-dom@18.2.0)(react@18.2.0)
   '@headlessui/react':
     specifier: ^1.7.17
     version: 1.7.17(react-dom@18.2.0)(react@18.2.0)
@@ -52,6 +52,9 @@ devDependencies:
   autoprefixer:
     specifier: ^10.4.16
     version: 10.4.16(postcss@8.4.31)
+  encoding:
+    specifier: ^0.1.13
+    version: 0.1.13
   eslint:
     specifier: ^8.51.0
     version: 8.51.0
@@ -144,14 +147,14 @@ packages:
       to-fast-properties: 2.0.0
     dev: false
 
-  /@builder.io/react@3.1.1(react-dom@18.2.0)(react@18.2.0):
+  /@builder.io/react@3.1.1(encoding@0.1.13)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-jGHPt+DJQM4IHvnqgfSvXoyItESQ0zEkHj1BGx+PNQJwxz2BrMtWF0YC3xyb4dLXuBHOy6ACndVFBtM+oBQbfQ==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
     dependencies:
-      '@builder.io/sdk': 2.1.1
+      '@builder.io/sdk': 2.1.1(encoding@0.1.13)
       '@emotion/core': 10.3.1(react@18.2.0)
       hash-sum: 2.0.0
       isolated-vm: 4.6.0
@@ -159,17 +162,17 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     optionalDependencies:
-      node-fetch: 2.7.0
+      node-fetch: 2.7.0(encoding@0.1.13)
       prop-types: 15.8.1
     transitivePeerDependencies:
       - encoding
     dev: false
 
-  /@builder.io/sdk@2.1.1:
+  /@builder.io/sdk@2.1.1(encoding@0.1.13):
     resolution: {integrity: sha512-L70LeI6jNbMW52i3L8L1FbjLZw3LGVyk3S7Z7YvrR7FuNbe6UnET9q8+wTSpw3FglP6onwNlMXe8EwNJR8lXCg==}
     dependencies:
       hash-sum: 2.0.0
-      node-fetch: 2.7.0
+      node-fetch: 2.7.0(encoding@0.1.13)
       tslib: 1.14.1
     transitivePeerDependencies:
       - encoding
@@ -1190,6 +1193,11 @@ packages:
     resolution: {integrity: sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==}
     dev: true
 
+  /encoding@0.1.13:
+    resolution: {integrity: sha512-ETBauow1T35Y/WZMkio9jiM0Z5xjHHmJ4XmjZOq1l/dXz3lr2sRn87nJy20RupqSh1F2m3HHPSp8ShIPQJrJ3A==}
+    dependencies:
+      iconv-lite: 0.6.3
+
   /end-of-stream@1.4.4:
     resolution: {integrity: sha512-+uw1inIHVPQoaVuHzRyXd21icM+cnt4CzD5rW+NC1wjOUSTOs+Te7FOv7AhN7vS9x/oIyhLP5PR1H+phQAHu5Q==}
     dependencies:
@@ -1949,6 +1957,12 @@ packages:
     hasBin: true
     dev: true
 
+  /iconv-lite@0.6.3:
+    resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      safer-buffer: 2.1.2
+
   /ieee754@1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
     dev: false
@@ -2509,7 +2523,7 @@ packages:
       semver: 7.5.4
     dev: false
 
-  /node-fetch@2.7.0:
+  /node-fetch@2.7.0(encoding@0.1.13):
     resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
     engines: {node: 4.x || >=6.0.0}
     peerDependencies:
@@ -2518,6 +2532,7 @@ packages:
       encoding:
         optional: true
     dependencies:
+      encoding: 0.1.13
       whatwg-url: 5.0.0
     dev: false
 
@@ -3140,6 +3155,9 @@ packages:
       get-intrinsic: 1.2.1
       is-regex: 1.1.4
     dev: true
+
+  /safer-buffer@2.1.2:
+    resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
 
   /scheduler@0.23.0:
     resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
